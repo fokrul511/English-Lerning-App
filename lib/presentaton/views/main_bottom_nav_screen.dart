@@ -3,7 +3,7 @@ import 'package:english_lerning_app/presentaton/utility/colors.dart';
 import 'package:english_lerning_app/presentaton/views/Home_screen.dart';
 import 'package:english_lerning_app/presentaton/views/exam_screen.dart';
 import 'package:english_lerning_app/presentaton/views/video_screen.dart';
-import 'package:english_lerning_app/presentaton/widgets/appBar.dart';
+import 'package:english_lerning_app/presentaton/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 
 class MainBottomNavScreen extends StatefulWidget {
@@ -30,7 +30,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
         child: ListView(
           children: [
-            UserAccountsDrawerHeader(
+            const UserAccountsDrawerHeader(
               accountName: Text("Fokrul Islam"),
               accountEmail: Text("fokrul1256@gmail,com"),
               currentAccountPicture: CircleAvatar(
@@ -40,20 +40,20 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
               ),
             ),
             ListTile(
-              title: Text('Profile'),
-              leading: Icon(Icons.person),
+              title: const Text('Profile'),
+              leading: const Icon(Icons.person),
               onTap: () {},
             ),
             ListTile(
-              title: Text('leaderBord'),
-              leading: Icon(Icons.leaderboard),
+              title: const Text('leaderBord'),
+              leading: const Icon(Icons.leaderboard),
               onTap: () {},
             ),
             ListTile(
-              title: Text('Notificaiton'),
-              leading: Badge(
+              title: const Text('Notificaiton'),
+              leading: const Badge(
                 label: Text('1'),
-                child: const Icon(
+                child: Icon(
                   Icons.notifications,
                   size: 25,
                   color: Color(0xfffbc107),
@@ -62,28 +62,28 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
               onTap: () {},
             ),
             ListTile(
-              title: Text('bookmark'),
-              leading: Icon(Icons.bookmark),
+              title: const Text('bookmark'),
+              leading: const Icon(Icons.bookmark),
               onTap: () {},
             ),
             ListTile(
-              title: Text('Shere'),
-              leading: Icon(Icons.share),
+              title: const Text('Shere'),
+              leading: const Icon(Icons.share),
               onTap: () {},
             ),
             ListTile(
-              title: Text('Privacy and Policiy'),
-              leading: Icon(Icons.privacy_tip_outlined),
+              title: const Text('Privacy and Policiy'),
+              leading: const Icon(Icons.privacy_tip_outlined),
               onTap: () {},
             ),
             ListTile(
-              title: Text('More App'),
-              leading: Icon(Icons.app_registration),
+              title: const Text('More App'),
+              leading: const Icon(Icons.app_registration),
               onTap: () {},
             ),
             ListTile(
-              title: Text('Rete Us'),
-              leading: Icon(Icons.star_rate),
+              title: const Text('Rete Us'),
+              leading: const Icon(Icons.star_rate),
               onTap: () {},
             )
           ],

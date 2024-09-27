@@ -1,5 +1,6 @@
-import 'package:english_lerning_app/presentaton/utility/asset_path.dart';
-import 'package:english_lerning_app/presentaton/widgets/appBar.dart';
+import 'package:english_lerning_app/presentaton/dummyData/daily_update_list.dart';
+import 'package:english_lerning_app/presentaton/dummyData/must_study_list.dart';
+import 'package:english_lerning_app/presentaton/dummyData/tools_list.dart';
 import 'package:english_lerning_app/presentaton/widgets/category_item.dart';
 import 'package:english_lerning_app/presentaton/widgets/row_category_item.dart';
 import 'package:english_lerning_app/presentaton/widgets/section_header.dart';
@@ -58,9 +59,8 @@ class HomeScreen extends StatelessWidget {
       child: GridView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        itemCount: 10,
-
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        itemCount: toolsList.length,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 12,
             mainAxisSpacing: 12,
@@ -81,15 +81,15 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            child: const Row(
+            child:  Row(
               children: [
                 Icon(
-                  Icons.add_business,
+                  toolsList[index]['icon'],
                   size: 40,
                 ),
                 Text(
-                  "Grammer",
-                  style: TextStyle(fontSize: 20),
+                 toolsList[index]['title'],
+                  style: const TextStyle(fontSize: 20),
                 ),
               ],
             ),
@@ -100,50 +100,43 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildToolsSinglechildScrolView() {
-    return const SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          ToolsCategory(
-            title: 'Tranaslate',
-            icons: Icons.home,
-          ),
-          SizedBox(
-            width: 20,
-          ),
-          ToolsCategory(
-            title: 'Tranaslate',
-            icons: Icons.home,
-          ),
-          SizedBox(
-            width: 20,
-          ),
-          ToolsCategory(
-            title: 'Tranaslate',
-            icons: Icons.home,
-          ),
-          SizedBox(
-            width: 20,
-          ),
-          ToolsCategory(
-            title: 'Tranaslate',
-            icons: Icons.home,
-          ),
-        ],
+    return SizedBox(
+      height: 160,
+      child: ListView.separated(
+        padding: const EdgeInsets.all(10),
+        scrollDirection: Axis.horizontal,
+        itemCount: toolsList.length,
+        itemBuilder: (context, index) {
+          return Row(
+            children: [
+              ToolsCategory(
+                title: toolsList[index]['title'],
+                icons: toolsList[index]['icon'],
+                colors: toolsList[index]['color'],
+              )
+            ],
+          );
+        }, separatorBuilder: (BuildContext context, int index) {
+          return const SizedBox(width: 15,);
+      },
       ),
     );
   }
 
   Widget _buildRowCategoryItems() {
     return SizedBox(
-      height: 70,
+      height: 85,
       child: ListView.separated(
+        padding: const EdgeInsets.all(10),
         scrollDirection: Axis.horizontal,
-        itemCount: 10,
+        itemCount: mustStudyList.length,
         itemBuilder: (context, index) {
-          return const RowCategoryaItem();
+          return RowCategoryaItem(
+            title: mustStudyList[index]['title'],
+            icons: mustStudyList[index]["icon"],
+          );
         },
-        separatorBuilder: (context, index) => const SizedBox(width: 8),
+        separatorBuilder: (context, index) => const SizedBox(width: 10),
       ),
     );
   }
@@ -153,9 +146,13 @@ class HomeScreen extends StatelessWidget {
       height: 150,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemCount: 10,
+        itemCount: dailyUpdateList.length,
         itemBuilder: (context, index) {
-          return const CategoryCardItem();
+          return CategoryCardItem(
+            title: dailyUpdateList[index]['title'],
+            icons: dailyUpdateList[index]['icon'],
+            colors: dailyUpdateList[index]['color'],
+          );
         },
         separatorBuilder: (BuildContext context, int index) {
           return const SizedBox(

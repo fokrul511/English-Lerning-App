@@ -1,10 +1,16 @@
-import 'package:english_lerning_app/presentaton/utility/colors.dart';
 import 'package:flutter/material.dart';
 
 class CategoryCardItem extends StatelessWidget {
   const CategoryCardItem({
     super.key,
+    required this.title,
+    required this.icons,
+    required this.colors,
   });
+
+  final String title;
+  final IconData icons;
+  final Color colors;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +20,7 @@ class CategoryCardItem extends StatelessWidget {
       width: 150,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: CustomColor.primaryColor,
+        color: colors,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -28,17 +34,17 @@ class CategoryCardItem extends StatelessWidget {
             height: 60,
             width: 60,
             child: Icon(
-              Icons.bookmark,
+              icons,
               color: Colors.white,
               size: 30,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Text(
-            "Today Lession",
-            style: TextStyle(color: Colors.white, fontSize: 18),
+            title ,
+            style: const TextStyle(color: Colors.white, fontSize: 18),
           )
         ],
       ),

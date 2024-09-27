@@ -1,5 +1,4 @@
 import 'package:english_lerning_app/presentaton/utility/colors.dart';
-import 'package:english_lerning_app/presentaton/views/home_screen.dart';
 import 'package:flutter/material.dart';
 
 int _cartItemsNo = 1;
@@ -7,7 +6,7 @@ int _cartItemsNo = 1;
 
 PreferredSizeWidget get profileAppBar {
   return AppBar(
-    iconTheme: IconThemeData(color: Colors.white),
+    iconTheme: const IconThemeData(color: Colors.white),
     backgroundColor: CustomColor.primaryColor,
     title: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,

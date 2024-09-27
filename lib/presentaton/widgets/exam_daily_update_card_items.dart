@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 class ExamDailyUpdateCardItems extends StatelessWidget {
   const ExamDailyUpdateCardItems({
-    super.key,
+    super.key, required this.title, required this.icons, required this.colors,
   });
-
+final String title;
+final IconData icons;
+final Color colors;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +20,7 @@ class ExamDailyUpdateCardItems extends StatelessWidget {
               color: Colors.grey.withOpacity(0.5),
               spreadRadius: 3,
               blurRadius: 2,
-              offset: Offset(0, 3))
+              offset: const Offset(0, 3))
         ],
       ),
       child: Column(
@@ -26,12 +28,13 @@ class ExamDailyUpdateCardItems extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
-            Icons.home,
+            icons,
             size: 50,
+            color: colors,
           ),
           Text(
-            "Home",
-            style: TextStyle(fontSize: 20),
+           title,
+            style: const TextStyle(fontSize: 20),
           ),
         ],
       ),

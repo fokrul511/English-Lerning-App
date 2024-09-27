@@ -1,6 +1,5 @@
 import 'package:english_lerning_app/presentaton/utility/asset_path.dart';
 import 'package:english_lerning_app/presentaton/utility/colors.dart';
-import 'package:english_lerning_app/presentaton/widgets/appBar.dart';
 import 'package:flutter/material.dart';
 
 class VideoScreen extends StatelessWidget {
@@ -16,7 +15,7 @@ class VideoScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image(
+            const Image(
               image: AssetImage(
                 AssetsPath.underDevelopmentImage,
               ),

@@ -6,11 +6,13 @@ class ToolsCategory extends StatelessWidget {
     required this.title,
     required this.icons,
     this.onTap,
+    required this.colors,
   });
 
   final String title;
   final IconData icons;
   final VoidCallback? onTap;
+  final Color colors;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class ToolsCategory extends StatelessWidget {
       onTap: onTap,
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Container(
@@ -30,23 +32,24 @@ class ToolsCategory extends StatelessWidget {
                   color: Colors.grey.withOpacity(0.3),
                   spreadRadius: 5,
                   blurRadius: 7,
-                  offset: Offset(0, 1),
+                  offset: const Offset(0, 1),
                 ),
               ],
               borderRadius: BorderRadius.circular(50),
               color: Colors.white,
             ),
             child: Icon(
-             icons,
+              icons,
               size: 40,
+              color: colors,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),

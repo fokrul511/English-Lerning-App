@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 
-class exam_must_study_card extends StatelessWidget {
-  const exam_must_study_card({
+class ExamMustStudyCard extends StatelessWidget {
+  const ExamMustStudyCard({
     super.key,
+    required this.title,
+    required this.icons,
+    required this.colors,
   });
+
+  final String title;
+  final IconData icons;
+  final Color colors;
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +19,11 @@ class exam_must_study_card extends StatelessWidget {
       width: 150,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
+        color: colors,
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
-            offset: Offset(0, 3),
+            offset: const Offset(0, 3),
             blurRadius: 3,
             spreadRadius: 2,
           ),
@@ -26,15 +33,16 @@ class exam_must_study_card extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
-            Icons.book_rounded,
+            icons,
             size: 50,
+            color: Colors.black,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Text(
-            "NOTES BANGLA",
-            style: TextStyle(fontSize: 16),
+            title,
+            style: const TextStyle(fontSize: 16),
           )
         ],
       ),

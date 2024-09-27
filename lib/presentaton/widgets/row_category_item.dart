@@ -4,23 +4,27 @@ import 'package:flutter/material.dart';
 class RowCategoryaItem extends StatelessWidget {
   const RowCategoryaItem({
     super.key,
+    required this.title,
+    required this.icons,
   });
+
+  final String title;
+  final IconData icons;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-
       height: 70,
       width: 150,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        color: CustomColor.primaryColor,
+        color: Colors.white,
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.3),
-            spreadRadius: 5,
-            blurRadius: 7,
-            offset: Offset(0, 3),
+            spreadRadius: 3,
+            blurRadius: 2,
+            offset: const Offset(0, 3),
           ),
         ],
       ),
@@ -29,20 +33,19 @@ class RowCategoryaItem extends StatelessWidget {
         child: Row(
           children: [
             Icon(
-              Icons.picture_as_pdf,
+              icons,
               size: 45,
-              color: Colors.white,
+              color: CustomColor.primaryColor,
             ),
-            SizedBox(
+            const SizedBox(
               width: 8,
             ),
             Expanded(
               child: Text(
-                'Pdf Course',
-                style: TextStyle(
+                title,
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
-                  color: Colors.white,
                 ),
               ),
             ),
