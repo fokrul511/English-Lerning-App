@@ -54,48 +54,46 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildHomeOtherStudySection() {
-    return SizedBox(
-      height: 350,
-      child: GridView.builder(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: toolsList.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 12,
-            mainAxisSpacing: 12,
-            childAspectRatio: 19 / 6),
-        itemBuilder: (context, index) {
-          return Container(
-            padding: const EdgeInsets.all(10),
-            height: 80,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.3),
-                  spreadRadius: 3,
-                  blurRadius: 5,
-                  offset: const Offset(0, 1),
-                ),
-              ],
-            ),
-            child:  Row(
-              children: [
-                Icon(
-                  toolsList[index]['icon'],
-                  size: 40,
-                ),
-                Text(
-                 toolsList[index]['title'],
-                  style: const TextStyle(fontSize: 20),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
+    return GridView.builder(
+
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: toolsList.length,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 12,
+          mainAxisSpacing: 12,
+          childAspectRatio: 19 / 6),
+      itemBuilder: (context, index) {
+        return Container(
+          padding: const EdgeInsets.all(10),
+          height: 80,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.3),
+                spreadRadius: 3,
+                blurRadius: 5,
+                offset: const Offset(0, 1),
+              ),
+            ],
+          ),
+          child:  Row(
+            children: [
+              Icon(
+                toolsList[index]['icon'],
+                size: 40,
+              ),
+              Text(
+               toolsList[index]['title'],
+                style: const TextStyle(fontSize: 20),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 
