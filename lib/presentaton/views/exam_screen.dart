@@ -1,5 +1,4 @@
 import 'package:english_lerning_app/presentaton/dummyData/daily_update_list.dart';
-import 'package:english_lerning_app/presentaton/dummyData/must_study_list.dart';
 import 'package:english_lerning_app/presentaton/dummyData/others_study_list.dart';
 import 'package:english_lerning_app/presentaton/widgets/exam_daily_update_card_items.dart';
 import 'package:english_lerning_app/presentaton/widgets/exam_must_study_card.dart';
@@ -20,17 +19,20 @@ class ExamScreen extends StatelessWidget {
           child: Column(
             children: [
               const SectionHeader(title: "Daily Updates"),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
+              //
               _buildDailyCategiroyItems(),
+              //
               const SizedBox(height: 10),
               const SectionHeader(title: "Must Study"),
               const SizedBox(height: 10),
+              //
               _buildMustStudyItemSection(),
+              //
               const SizedBox(height: 10),
               const SectionHeader(title: "Others Study"),
               const SizedBox(height: 10),
+              //
               _mustStudyCard()
             ],
           ),
@@ -48,7 +50,7 @@ class ExamScreen extends StatelessWidget {
       itemBuilder: (context, index) {
         return Container(
           margin: const EdgeInsets.all(5),
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(16),
           height: 80,
           width: double.maxFinite,
           decoration: BoxDecoration(
@@ -59,7 +61,7 @@ class ExamScreen extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.5),
                 blurRadius: 3,
                 spreadRadius: 2,
-                offset: const Offset(0, 3),
+                offset: const Offset(0, 2),
               )
             ],
           ),
@@ -67,7 +69,7 @@ class ExamScreen extends StatelessWidget {
             children: [
               Icon(
                 othersStudyList[index]['icon'],
-                size: 30,
+                size: 40,
                 color: othersStudyList[index]['color'],
               ),
               const SizedBox(
@@ -75,7 +77,10 @@ class ExamScreen extends StatelessWidget {
               ),
               Text(
                 othersStudyList[index]['title'],
-                style: const TextStyle(fontSize: 20),
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ],
           ),
@@ -86,16 +91,16 @@ class ExamScreen extends StatelessWidget {
 
   SizedBox _buildMustStudyItemSection() {
     return SizedBox(
-      height: 200,
+      height: 250,
       child: ListView.separated(
-        itemCount: mustStudyList.length,
+        itemCount: dailyUpdateList3.length,
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.all(10),
         itemBuilder: (context, index) {
           return ExamMustStudyCard(
-            title: mustStudyList[index]['title'],
-            colors: mustStudyList[index]['color'],
-            icons: mustStudyList[index]['icon'],
+            title: dailyUpdateList3[index]['title'],
+            colors: dailyUpdateList3[index]['color'],
+            icons: dailyUpdateList3[index]['icon'],
           );
         },
         separatorBuilder: (context, index) {
@@ -109,11 +114,11 @@ class ExamScreen extends StatelessWidget {
 
   Widget _buildDailyCategiroyItems() {
     return SizedBox(
-      height: 200,
+      height: 220,
       child: ListView.separated(
         padding: const EdgeInsets.all(10),
         scrollDirection: Axis.horizontal,
-        itemCount: dailyUpdateList.length,
+        itemCount: dailyUpdateList2.length,
         itemBuilder: (context, index) {
           return ExamDailyUpdateCardItems(
             title: dailyUpdateList[index]['title'],
@@ -123,7 +128,7 @@ class ExamScreen extends StatelessWidget {
         },
         separatorBuilder: (BuildContext context, int index) {
           return const SizedBox(
-            width: 10,
+            width: 16,
           );
         },
       ),

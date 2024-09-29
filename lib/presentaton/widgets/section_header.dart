@@ -18,9 +18,12 @@ class SectionHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-         Text(
-         title,
-          style: const TextStyle(fontSize: 25),
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.w300,
+          ),
         ),
         IconButton(
           onPressed: ontap,

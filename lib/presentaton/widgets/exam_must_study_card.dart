@@ -35,14 +35,17 @@ class ExamMustStudyCard extends StatelessWidget {
           Icon(
             icons,
             size: 50,
-            color: Colors.black,
+            color: Colors.white,
           ),
           const SizedBox(
             height: 20,
           ),
           Text(
             title,
-            style: const TextStyle(fontSize: 16),
+            style: const TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+            ),
           )
         ],
       ),

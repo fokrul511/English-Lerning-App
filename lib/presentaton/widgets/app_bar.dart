@@ -13,7 +13,10 @@ PreferredSizeWidget get profileAppBar {
       children: [
         const Text(
           "EnglishLerning",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w300,
+          ),
         ),
         IconButton(
           onPressed: () {},
@@ -21,7 +24,7 @@ PreferredSizeWidget get profileAppBar {
             label: Text(_cartItemsNo.toString()),
             child: const Icon(
               Icons.notifications,
-              size: 25,
+              size: 30,
               color: Color(0xfffbc107),
             ),
           ),

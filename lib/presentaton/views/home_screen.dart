@@ -38,13 +38,13 @@ class HomeScreen extends StatelessWidget {
               const SectionHeader(
                 title: 'Tools',
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 5),
               _buildToolsSinglechildScrolView(),
               const SizedBox(height: 10),
               const SectionHeader(
                 title: 'Others Study',
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 16),
               _buildHomeOtherStudySection()
             ],
           ),
@@ -55,7 +55,6 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildHomeOtherStudySection() {
     return GridView.builder(
-
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: toolsList.length,
@@ -63,31 +62,32 @@ class HomeScreen extends StatelessWidget {
           crossAxisCount: 2,
           crossAxisSpacing: 12,
           mainAxisSpacing: 12,
-          childAspectRatio: 19 / 6),
+          childAspectRatio: 19 /7),
       itemBuilder: (context, index) {
         return Container(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(16),
           height: 80,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.3),
-                spreadRadius: 3,
-                blurRadius: 5,
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 2,
+                blurRadius: 3,
                 offset: const Offset(0, 1),
               ),
             ],
           ),
-          child:  Row(
+          child: Row(
             children: [
               Icon(
                 toolsList[index]['icon'],
                 size: 40,
+                color:   toolsList[index]['color'],
               ),
               Text(
-               toolsList[index]['title'],
+                toolsList[index]['title'],
                 style: const TextStyle(fontSize: 20),
               ),
             ],
@@ -105,18 +105,17 @@ class HomeScreen extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: toolsList.length,
         itemBuilder: (context, index) {
-          return Row(
-            children: [
-              ToolsCategory(
-                title: toolsList[index]['title'],
-                icons: toolsList[index]['icon'],
-                colors: toolsList[index]['color'],
-              )
-            ],
+          return ToolsCategory(
+            title: toolsList[index]['title'],
+            icons: toolsList[index]['icon'],
+            colors: toolsList[index]['color'],
           );
-        }, separatorBuilder: (BuildContext context, int index) {
-          return const SizedBox(width: 15,);
-      },
+        },
+        separatorBuilder: (BuildContext context, int index) {
+          return const SizedBox(
+            width: 20,
+          );
+        },
       ),
     );
   }
@@ -134,14 +133,14 @@ class HomeScreen extends StatelessWidget {
             icons: mustStudyList[index]["icon"],
           );
         },
-        separatorBuilder: (context, index) => const SizedBox(width: 10),
+        separatorBuilder: (context, index) => const SizedBox(width: 16),
       ),
     );
   }
 
   Widget _buildCategoryListView() {
     return SizedBox(
-      height: 150,
+      height: 160,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: dailyUpdateList.length,

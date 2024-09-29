@@ -30,8 +30,8 @@ class ToolsCategory extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.3),
-                  spreadRadius: 5,
-                  blurRadius: 7,
+                  spreadRadius: 2,
+                  blurRadius: 4,
                   offset: const Offset(0, 1),
                 ),
               ],
@@ -51,7 +51,8 @@ class ToolsCategory extends StatelessWidget {
             title,
             style: const TextStyle(
               fontSize: 18,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w500,
+
             ),
           )
         ],
