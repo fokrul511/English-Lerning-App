@@ -15,8 +15,8 @@ class RowCategoryaItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(5),
-      height: 80,
-      width: 160,
+      height: 70,
+      width: 120,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: Colors.white,
@@ -33,17 +33,18 @@ class RowCategoryaItem extends StatelessWidget {
         children: [
           Icon(
             icons,
-            size: 45,
+            size: 30,
             color: CustomColor.primaryColor,
           ),
           const SizedBox(
-            width: 8,
+            width: 5,
           ),
           Expanded(
             child: Text(
               title,
+              textAlign: TextAlign.start,
               style: const TextStyle(
-                fontSize: 18,
+                fontSize: 16,
                 fontWeight: FontWeight.w400,
               ),
             ),

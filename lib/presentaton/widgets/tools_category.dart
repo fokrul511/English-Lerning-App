@@ -24,8 +24,8 @@ class ToolsCategory extends StatelessWidget {
             height: 10,
           ),
           Container(
-            height: 80,
-            width: 80,
+            height: 70,
+            width: 70,
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -40,7 +40,7 @@ class ToolsCategory extends StatelessWidget {
             ),
             child: Icon(
               icons,
-              size: 40,
+              size: 35,
               color: colors,
             ),
           ),

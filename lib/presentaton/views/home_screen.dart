@@ -69,7 +69,7 @@ class HomeScreen extends StatelessWidget {
           height: 80,
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(5),
             boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.2),
@@ -113,7 +113,7 @@ class HomeScreen extends StatelessWidget {
         },
         separatorBuilder: (BuildContext context, int index) {
           return const SizedBox(
-            width: 20,
+            width: 16,
           );
         },
       ),
@@ -122,7 +122,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildRowCategoryItems() {
     return SizedBox(
-      height: 85,
+      height: 80,
       child: ListView.separated(
         padding: const EdgeInsets.all(10),
         scrollDirection: Axis.horizontal,
@@ -133,14 +133,14 @@ class HomeScreen extends StatelessWidget {
             icons: mustStudyList[index]["icon"],
           );
         },
-        separatorBuilder: (context, index) => const SizedBox(width: 16),
+        separatorBuilder: (context, index) => const SizedBox(width: 10),
       ),
     );
   }
 
   Widget _buildCategoryListView() {
     return SizedBox(
-      height: 160,
+      height: 150,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: dailyUpdateList.length,

@@ -16,7 +16,7 @@ class ExamDailyUpdateCardItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      width: 150,
+      width: 112,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -40,8 +40,9 @@ class ExamDailyUpdateCardItems extends StatelessWidget {
           SizedBox(height: 10,),
           Text(
             title,
+            textAlign: TextAlign.center,
             style: const TextStyle(
-              fontSize: 20,
+              fontSize: 14,
               fontWeight: FontWeight.w500,
             ),
           ),

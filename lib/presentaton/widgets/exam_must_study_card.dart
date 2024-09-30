@@ -15,8 +15,7 @@ class ExamMustStudyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
-      width: 150,
+      width: 116,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: colors,
@@ -34,17 +33,18 @@ class ExamMustStudyCard extends StatelessWidget {
         children: [
           Icon(
             icons,
-            size: 50,
+            size: 40,
             color: Colors.white,
           ),
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
           Text(
             title,
             style: const TextStyle(
-              fontSize: 20,
+              fontSize: 16,
               color: Colors.white,
+              fontWeight:  FontWeight.w600,
             ),
           )
         ],

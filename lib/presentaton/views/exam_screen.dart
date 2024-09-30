@@ -19,11 +19,9 @@ class ExamScreen extends StatelessWidget {
           child: Column(
             children: [
               const SectionHeader(title: "Daily Updates"),
-              const SizedBox(height: 10),
               //
               _buildDailyCategiroyItems(),
               //
-              const SizedBox(height: 10),
               const SectionHeader(title: "Must Study"),
               const SizedBox(height: 10),
               //
@@ -31,7 +29,6 @@ class ExamScreen extends StatelessWidget {
               //
               const SizedBox(height: 10),
               const SectionHeader(title: "Others Study"),
-              const SizedBox(height: 10),
               //
               _mustStudyCard()
             ],
@@ -54,11 +51,11 @@ class ExamScreen extends StatelessWidget {
           height: 80,
           width: double.maxFinite,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(5),
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
+                color: Colors.grey.withOpacity(0.3),
                 blurRadius: 3,
                 spreadRadius: 2,
                 offset: const Offset(0, 2),
@@ -91,7 +88,7 @@ class ExamScreen extends StatelessWidget {
 
   SizedBox _buildMustStudyItemSection() {
     return SizedBox(
-      height: 250,
+      height: 200,
       child: ListView.separated(
         itemCount: dailyUpdateList3.length,
         scrollDirection: Axis.horizontal,
@@ -114,7 +111,7 @@ class ExamScreen extends StatelessWidget {
 
   Widget _buildDailyCategiroyItems() {
     return SizedBox(
-      height: 220,
+      height: 160,
       child: ListView.separated(
         padding: const EdgeInsets.all(10),
         scrollDirection: Axis.horizontal,
@@ -128,7 +125,7 @@ class ExamScreen extends StatelessWidget {
         },
         separatorBuilder: (BuildContext context, int index) {
           return const SizedBox(
-            width: 16,
+            width: 12,
           );
         },
       ),
